@@ -6,3 +6,6 @@
 ## Legajo: 97069
 ## Apellido: Gonzalez Heredia
 ## Nombre: Julián
+## Email: juliangon25@gmail.com
+
+#### Compilador: MinGW - GCC port for Windows
