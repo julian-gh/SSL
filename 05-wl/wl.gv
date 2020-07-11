@@ -1,0 +1,10 @@
+
+digraph G {
+    rankdir=LR;
+	size="8,5"
+	node [shape = circle];
+    IN -> IN [ label = "char / print char" ];
+    IN -> OUT [ label = "blank / print \\n" ];
+    OUT -> OUT [ label = "blank / ε" ];
+    OUT -> IN [ label = "char / print char" ]; 
+}
