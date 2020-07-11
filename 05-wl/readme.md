@@ -42,3 +42,15 @@
 ### 3 - Implementaciones
 
     a.ii)
+    Como ventajas, ambos facilitan mucho la lectura del programa, siendo IN/OUT mucho más expresivo que 1/0. Facilita también a la hora de realizar cambios al programa, ya que solo debemos cambiar la declaración del define o del enum, en lugar de buscar cada ocurrencia de los estados.
+
+    Usar una constate simbólica trae la desventaja de no poder definir un tipo, no hay restricciones para, por ejemplo, hacer una comparación con sentido semántico pero no pragmático (IN < 8 por ejemplo).
+
+    Algunas desventajas del enum es que no podemos definir estados con algunos tipos de datos como char, por ejemplo.
+
+
+    b.ii)
+    Si es utiliza a conciencia, el goto puede reducir la complejidad algorítmica. Un ejemplo clásico es salir de varios ciclos anidados si se encuentra un error en la ejecución. También, si es crucial la performance a nivel muy bajo, puede resultar útil. Go, C# poseen la instrucción.
+
+    c.ii)
+    En este caso no son necesarios, pero si quiesiera usarlos se me ocurren dos formas. Uno sería tilizar una variable global que guarde el valor del contador. El otro sería que la función recursiva reciba como argumento el contador, y con cada llamada recursiva este se incremente.
