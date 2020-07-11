@@ -10,6 +10,8 @@ typedef enum states state;
 
 int main(void)
 {
+    const char str = "asd asd asd asd asd";
+    printWordsInLines(str);
 }
 
 printWordsInLines(const char *s)

@@ -8,10 +8,6 @@ int main(void)
     printWordsInLines(str);
 }
 
-// Vamos a tratar los gotos como los JMP incondicionales que
-// encontrariamos en ASM, de modo que podemos modelar el
-// el ciclo y los condicionales de la misma forma.
-
 printWordsInLines(const char *s)
 {
     int c;
