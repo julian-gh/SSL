@@ -1,54 +1,19 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int main(void)
 {
-
     const char str = "asd asd asd asd asd";
 
-    printWordsInLines(str);
+    out(str);
 }
 
-// Vamos a tratar los gotos como los JMP incondicionales que
-// encontrariamos en ASM, de modo que podemos modelar el
-// el ciclo y los condicionales de la misma forma.
-
-printWordsInLines(const char *s)
+void in(const char *s)
 {
-    int c;
-    int i = 0;
-    goto OUT;
+    int c = s[0];
 
-OUT:
-    c = s[i];
     if (c != EOF)
     {
-        i++;
-        switch (c)
-        {
-        case ' ':
-        case '\n':
-        case '\t':
-        case ',':
-        case ';':
-        case '.':
-        {
-            goto OUT;
-            break;
-        }
-        default:
-        {
-            putchar(c);
-            goto IN;
-            break;
-        }
-        }
-    }
-
-IN:
-    c = s[i];
-    if (c != EOF)
-    {
-        i++;
         switch (c)
         {
         case ' ':
@@ -59,13 +24,41 @@ IN:
         case '.':
         {
             putchar('\n');
-            goto OUT;
+            out(s + 1);
             break;
         }
         default:
         {
             putchar(c);
-            goto IN;
+            in(s + 1);
+            break;
+        }
+        }
+    }
+}
+
+void out(const char *s)
+{
+    int c = s[0];
+
+    if (c != EOF)
+    {
+        switch (c)
+        {
+        case ' ':
+        case '\n':
+        case '\t':
+        case ',':
+        case ';':
+        case '.':
+        {
+            out(s + 1);
+            break;
+        }
+        default:
+        {
+            putchar(c);
+            in(s + 1);
             break;
         }
         }

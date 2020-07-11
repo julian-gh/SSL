@@ -10,11 +10,17 @@ typedef enum states state;
 
 int main(void)
 {
-    state s = OUT;
-    int c;
+}
 
-    while ((c = getchar()) != EOF)
+printWordsInLines(const char *s)
+{
+    state state = OUT;
+    int c;
+    int i = 0;
+
+    while ((c = s[i]) != EOF)
     {
+        i++;
         switch (c)
         {
         case ' ':
@@ -24,15 +30,15 @@ int main(void)
         case ';':
         case '.':
         {
-            if (s == IN)
+            if (state == IN)
             {
-                s = OUT;
+                state = OUT;
                 putchar('\n');
             }
             break;
         }
         default:
-            s = IN;
+            state = IN;
             putchar(c);
             break;
         }
